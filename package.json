@@ -1,0 +1,44 @@
+{
+  "name": "vogelvlug-de",
+  "version": "1.0.0",
+  "description": "Mein persönliches Portfolio auf VogelVlug.de",
+  "scripts": {
+    "dev": "parcel src/frontend/index.html",
+    "build": "parcel build src/frontend/index.html --out-dir build --public-url ./"
+  },
+  "browserslist": [
+    "Chrome > 75",
+    "Firefox > 66",
+    "Safari > 10"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Wursteintopf/VogelVlug"
+  },
+  "author": "Markus Vogel",
+  "license": "GPL-3.0-or-later",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5",
+    "@typescript-eslint/eslint-plugin": "^5.13.0",
+    "@typescript-eslint/parser": "^5.13.0",
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-config-standard-jsx": "^10.0.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.2.0",
+    "eslint-plugin-react": "^7.29.2",
+    "eslint-plugin-standard": "^5.0.0"
+  },
+  "dependencies": {
+    "@types/react": "^17.0.39",
+    "@types/react-dom": "^17.0.13",
+    "@types/react-router": "^5.1.18",
+    "@types/react-router-dom": "^5.3.3",
+    "path": "^0.12.7",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^6.2.2",
+    "typescript": "^4.6.2"
+  }
+}
