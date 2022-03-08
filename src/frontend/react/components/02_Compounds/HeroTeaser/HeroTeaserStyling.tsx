@@ -23,19 +23,21 @@ export const HeroTeaserContent = styled.div`
     overflow: hidden;
 
     h1 {
+      position: relative;
       margin: 0;    
       font-size: 4em;    
       animation-name: moveInLeft;
-      animation-delay: 100ms;
+      animation-delay: 300ms;
       animation-duration: 1000ms;
       animation-timing-function: ease-in-out 0.2s;
     }
 
     p {
+      position: relative;
       font-weight: 300;
       letter-spacing: 0.2em;
       animation-name: moveInLeft;
-      animation-delay: 300ms;
+      animation-delay: 500ms;
       animation-duration: 800ms;
       animation-timing-function: ease-in-out 0.2s;
     }
@@ -47,7 +49,7 @@ export const HeroTeaserContent = styled.div`
     height: 500px;
     margin-right: 100px;
     animation-name: scaleUp;
-    animation-delay: 200ms;
+    animation-delay: 400ms;
     animation-duration: 1000ms;
     animation-timing-function: ease-in-out 0.2s;
   }

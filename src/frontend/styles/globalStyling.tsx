@@ -1,4 +1,5 @@
 import { css } from '@emotion/react'
+import themeVariables from './themeVariables'
 
 export const globalStyles = css`
   * {
@@ -10,6 +11,7 @@ export const globalStyles = css`
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    background-color: ${themeVariables.grey0};
   }
 
   body {
