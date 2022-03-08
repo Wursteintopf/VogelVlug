@@ -2,8 +2,11 @@ import styled from '@emotion/styled'
 import React from 'react'
 import wave from '../../../../assets/wave2.svg'
 import themeVariables from '../../../../styles/themeVariables'
-import { Headline } from '../../00_Atoms/Headline/Headline'
 import arrow from '../../../../assets/arrow.svg'
+import logo from '../../../../assets/bird.png'
+import PersonIcon from '@mui/icons-material/Person'
+import EmailIcon from '@mui/icons-material/Email'
+import TelegramIcon from '@mui/icons-material/Telegram'
 
 export const FooterSection = styled.section`
   position: relative;
@@ -29,10 +32,12 @@ export const FooterHeadline = styled.h2`
 
 export const CTAContent = styled.div`
   width: 1200px;
-  margin: 0 auto 100px auto;
+  margin: 0 auto;
+  padding-bottom: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 `
 
 export const CTATagline = styled.div`
@@ -76,6 +81,74 @@ export const CTAButton = styled.button`
   }
 `
 
+export const FooterMenu = styled.div`
+  width: 1200px;
+  margin: 0 auto;
+  padding: 60px 0;
+  display: flex;
+  justify-content: space-between;
+`
+
+export const FooterLeft = styled.div`
+
+`
+
+export const FooterLogoArea = styled.div`
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 40px;
+
+  img {
+    width: 64px;
+    height: 64px;
+    margin-right: 20px;
+  }
+`
+
+export const FooterContactArea = styled.div`
+  
+`
+
+export const FooterContact = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+
+  svg {
+    margin-right: 10px;
+  }
+`
+
+export const FooterRight = styled.div`
+  display: flex;
+`
+
+export const FooterLinkArea = styled.div`
+  margin-left: 60px;
+
+  a {
+    display: block;
+    color: ${themeVariables.white};
+    margin-bottom: 10px;
+  }
+`
+
+export const FooterLinkHeader = styled.div`
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+`
+
+export const FooterCopyright = styled.div`
+  width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 60px;
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 0.9rem;
+`
+
 const Footer: React.FC = () => {
   return (
     <FooterSection>
@@ -87,6 +160,49 @@ const Footer: React.FC = () => {
         </CTATagline>
         <CTAButton>Let's talk</CTAButton>
       </CTAContent>
+      <FooterMenu>
+        <FooterLeft>
+          <FooterLogoArea>
+            <img src={logo} /> vogelvlug
+          </FooterLogoArea>
+          <FooterContactArea>
+            <FooterContact><PersonIcon />Markus Vogel</FooterContact>
+            <FooterContact><EmailIcon />markus@vogelvlug.de</FooterContact>
+            <FooterContact><TelegramIcon />Telegram: @Markus Vogel</FooterContact>
+          </FooterContactArea>
+        </FooterLeft>
+        <FooterRight>
+          <FooterLinkArea>
+            <FooterLinkHeader>Mehr von mir</FooterLinkHeader>
+            <a href='https://youlys.de'>YouLys</a>
+            <a href='https://shop.vogelvlug.de'>VogelVlug Shop</a>
+            <a href='https://gridplanner.vogelvlug.de'>Gridplanner</a>
+            <a href='https://sociallinks.vogelvlug.de'>Linktree</a>
+            <a href='https://t.me/vogelvlug'>Telegram Gruppe</a>
+          </FooterLinkArea>
+          <FooterLinkArea>
+            <FooterLinkHeader>Supporte mich</FooterLinkHeader>
+            <a href='https://paypal.me/vogelvlug'>PayPal</a>
+            <a href='https://patreon.com/vogelvlug'>Patreon</a>
+          </FooterLinkArea>
+          <FooterLinkArea>
+            <FooterLinkHeader>Social Media</FooterLinkHeader>
+            <a href='https://tiktok.com/@vogelvlug'>TikTok</a>
+            <a href='https://youtube.com/vogelvlug'>YouTube</a>
+            <a href='https://www.instagram.com/vogel_vlug/'>Instagram</a>
+            <a href='https://www.xing.com/profile/Markus_Vogel138/cv'>XING</a>
+            <a href='https://www.linkedin.com/in/markus-vogel-115338231/'>LinkedIn</a>
+          </FooterLinkArea>
+          <FooterLinkArea>
+            <FooterLinkHeader>Legal Stuff</FooterLinkHeader>
+            <a href='https://vogelvlug.de/impressum'>Impressum</a>
+            <a href='https://vogelvlug.de/datenschutz'>Datenschutz</a>
+          </FooterLinkArea>
+        </FooterRight>
+      </FooterMenu>
+      <FooterCopyright>
+        © {new Date().getFullYear()} - Markus Vogel
+      </FooterCopyright>
     </FooterSection>
   )
 }
