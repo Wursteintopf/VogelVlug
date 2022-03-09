@@ -3,10 +3,10 @@ import styled from '@emotion/styled'
 import React, { useEffect, useState } from 'react'
 import themeVariables from '../../../../styles/themeVariables'
 
-export const StyledLoader = styled.div<{ bottom: number }>`
+export const StyledLoader = styled.div<{ bottom: string }>`
   position: fixed;
   top: 0;
-  bottom: ${props => props.bottom}px;
+  bottom: ${props => props.bottom};
   left: 0;
   right: 0;
   background-color: ${themeVariables.darkBlue};
@@ -15,10 +15,10 @@ export const StyledLoader = styled.div<{ bottom: number }>`
 `
 
 const Loader: React.FC = () => {
-  const [bottom, setBottom] = useState(0)
+  const [bottom, setBottom] = useState('0')
 
   setTimeout(() => {
-    setBottom(window.innerHeight)
+    setBottom('100%')
   }, 150)
 
   return (

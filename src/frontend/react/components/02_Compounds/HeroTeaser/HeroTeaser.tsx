@@ -7,7 +7,6 @@ import nebula2 from '../../../../assets/galaxy/nebula_2.svg'
 import planetBlue from '../../../../assets/galaxy/planet_blue.svg'
 import planetGreen from '../../../../assets/galaxy/planet_green.svg'
 import planetRed from '../../../../assets/galaxy/planet_red.svg'
-import planetSmall from '../../../../assets/galaxy/planet_small.svg'
 import rocket from '../../../../assets/galaxy/rocket.svg'
 import star from '../../../../assets/galaxy/star.svg'
 import wave from '../../../../assets/wave1.svg'
@@ -35,12 +34,12 @@ const HeroTeaser: React.FC = () => {
     <>
       <HeroTeaserSection>
         <HeroTeaserBackground ref={parallaxContainer}>
-          <div data-depth={layerSpeedOne}><HeroTeaserParallaxElement src={nebula1} width='900' height='900' x={50} y={-50} /></div>
-          <div data-depth={layerSpeedOne}><HeroTeaserParallaxElement src={nebula2} width='900' height='900' x={-10} y={30} /></div>
+          <div data-depth={layerSpeedOne}><HeroTeaserParallaxElement src={nebula1} width='900' height='900' x={50} y={-30} /></div>
+          <div data-depth={layerSpeedOne}><HeroTeaserParallaxElement src={nebula2} width='900' height='900' x={-10} y={15} /></div>
           <div data-depth={layerSpeedThree}><HeroTeaserParallaxElement src={planetBlue} width='250' height='250' x={33} y={66} /></div>
-          <div data-depth={layerSpeedThree}><HeroTeaserParallaxElement src={planetGreen} width='120' height='120' x={20} y={3} /></div>
+          <div data-depth={layerSpeedThree}><HeroTeaserParallaxElement src={planetGreen} width='120' height='120' x={20} y={9} /></div>
           <div data-depth={layerSpeedThree}><HeroTeaserParallaxElement src={planetRed} width='120' height='120' x={-2} y={60} /></div>
-          <div data-depth={layerSpeedThree}><HeroTeaserParallaxElement onClick={() => setRocketPosition({ x: 50, y: 50 })} src={rocket} width='170' height='170' x={rocketPosition.x} y={rocketPosition.y} /></div>
+          <div data-depth={layerSpeedThree}><HeroTeaserParallaxElement style={{ zIndex: 10 }} onClick={() => setRocketPosition({ x: 50, y: 50 })} src={rocket} width='170' height='170' x={rocketPosition.x} y={rocketPosition.y} /></div>
           <div data-depth={layerSpeedTwo}><HeroTeaserParallaxElement src={star} width='20' height='20' x={10} y={15} /></div>
           <div data-depth={layerSpeedTwo}><HeroTeaserParallaxElement src={star} width='10' height='10' x={11.5} y={13} /></div>
           <div data-depth={layerSpeedTwo}><HeroTeaserParallaxElement src={star} width='10' height='10' x={55} y={70} /></div>
