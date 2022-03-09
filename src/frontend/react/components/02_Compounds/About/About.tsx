@@ -1,10 +1,10 @@
 import styled from '@emotion/styled'
 import React from 'react'
 import themeVariables from '../../../../styles/themeVariables'
+import { Container } from '../../00_Atoms/Layout/Container'
 
-export const AboutContainer = styled.div`
-  width: 1000px;
-  margin: 0 auto 200px auto;
+export const AboutContainer = styled(Container)`
+  padding-bottom: 200px;
   display: flex;
   align-items: center;
   color: ${themeVariables.grey8};
@@ -24,7 +24,7 @@ export const AboutP = styled.p`
 const About: React.FC = () => {
   return (
     <section>
-      <AboutContainer>
+      <AboutContainer maxWidth={1000}>
         <AboutH2>
           Hui, du machst ja ne ganze Menge!
         </AboutH2>

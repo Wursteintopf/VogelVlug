@@ -7,7 +7,7 @@ import design from '../../../../assets/whatido/design.svg'
 import fotografie from '../../../../assets/whatido/photography.svg'
 import styled from '@emotion/styled'
 import themeVariables from '../../../../styles/themeVariables'
-import { Headline } from '../../00_Atoms/Headline/Headline'
+import { Headline } from '../../00_Atoms/Typography/Headline'
 
 export const WhatIDoContainer = styled.section`
   width: 1000px;

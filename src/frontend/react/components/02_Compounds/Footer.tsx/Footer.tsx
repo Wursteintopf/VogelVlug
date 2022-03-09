@@ -190,6 +190,7 @@ const Footer: React.FC = () => {
             <a href='https://tiktok.com/@vogelvlug'>TikTok</a>
             <a href='https://youtube.com/vogelvlug'>YouTube</a>
             <a href='https://www.instagram.com/vogel_vlug/'>Instagram</a>
+            <a href='https://github.com/Wursteintopf/'>GitHub</a>
             <a href='https://www.xing.com/profile/Markus_Vogel138/cv'>XING</a>
             <a href='https://www.linkedin.com/in/markus-vogel-115338231/'>LinkedIn</a>
           </FooterLinkArea>

@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 import React from 'react'
 import themeVariables from '../../../../styles/themeVariables'
-import { Headline } from '../../00_Atoms/Headline/Headline'
+import { Headline } from '../../00_Atoms/Typography/Headline'
 import quotationMarksSemitransparent from '../../../../assets/quotation-mark-semitransparent.svg'
 import quotationMarks from '../../../../assets/quotation-mark.svg'
 

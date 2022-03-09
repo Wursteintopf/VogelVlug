@@ -1,5 +1,5 @@
-import styled from '@emotion/styled'
 import themeVariables from '../../../../styles/themeVariables'
+import styled from 'styled-components'
 
 export const HeroTeaserSection = styled.section`
   height: 100vh;
@@ -17,10 +17,24 @@ export const HeroTeaserContent = styled.div`
   align-items: center;
   height: 100%;
 
+  ${themeVariables.breakDesktop} {
+    flex-direction: column-reverse;
+    justify-content: start;
+  }
+
   div {
     position: relative;
     margin: 100px;
     overflow: hidden;
+
+    ${themeVariables.breakDesktop} {
+      text-align: center;
+      margin: 50px 100px;
+    }
+
+    ${themeVariables.breakMobile} {
+      margin: 50px;
+    }
 
     h1 {
       position: relative;
@@ -30,6 +44,14 @@ export const HeroTeaserContent = styled.div`
       animation-delay: 300ms;
       animation-duration: 1000ms;
       animation-timing-function: ease-in-out 0.2s;
+
+      ${themeVariables.breakXL} {
+        font-size: 3.5rem;
+      }
+
+      ${themeVariables.breakMobile} {
+        font-size: 3rem;
+      }
     }
 
     p {
@@ -52,6 +74,25 @@ export const HeroTeaserContent = styled.div`
     animation-delay: 400ms;
     animation-duration: 1000ms;
     animation-timing-function: ease-in-out 0.2s;
+
+    ${themeVariables.breakXXL} {
+      width: 400px;
+      height: 400px;
+    }
+
+    ${themeVariables.breakDesktop} {
+      margin-top: 50px;
+      margin-right: 0;
+      width: 350px;
+      height: 350px;
+    }
+
+    ${themeVariables.breakMobile} {
+      margin-top: 50px;
+      margin-right: 0;
+      width: 300px;
+      height: 300px;
+    }
   }
 
   @keyframes scaleUp {
@@ -67,11 +108,11 @@ export const HeroTeaserContent = styled.div`
 
 export const HeroTeaserBackground = styled.div`
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  width: 1920px;
+  height: 1080px;
+  transform: translate(-50%, -50%);
 
   #rocket {
     transition: opacity 1s ease, left 0.5s ease-in-out 0.1s, top 0.5s ease-in-out 0.1s;
@@ -80,15 +121,19 @@ export const HeroTeaserBackground = styled.div`
   }
 
   div {
-    width: 100vw;
-    height: 100vh;
+    width: 1920px;
+    height: 1080px;
+
+    ${themeVariables.breakDesktop} {
+      width: 1500px;
+    }
   }
 `
 
 export const HeroTeaserParallaxElement = styled.img<{ x: number, y: number }>`
   position: absolute;
-  left: ${props => props.x}%;
-  top: ${props => props.y}%;
+  left: ${props => props.x - 50}%;
+  top: ${props => props.y - 50}%;
   animation-name: fadeIn;
   animation-delay: 200ms;
   animation-duration: 1000ms;

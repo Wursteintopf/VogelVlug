@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import React from 'react'
-import { Headline } from '../../00_Atoms/Headline/Headline'
+import { Headline } from '../../00_Atoms/Typography/Headline'
 import ProjectCard from '../../01_Molecules/ProjectCard/ProjectCard'
 import sahakom from '../../../../assets/sahakom.svg'
 import youlys from '../../../../assets/youlys.svg'
