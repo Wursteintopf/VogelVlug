@@ -20,6 +20,7 @@ export const globalStyles = css`
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
   }
 
   a {
