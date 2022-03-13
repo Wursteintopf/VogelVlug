@@ -10,6 +10,13 @@ import planetRed from '../../../../assets/galaxy/planet_red.svg'
 import rocket from '../../../../assets/galaxy/rocket.svg'
 import star from '../../../../assets/galaxy/star.svg'
 import wave from '../../../../assets/wave1.svg'
+import styled from '@emotion/styled'
+
+export const Wave = styled.img`
+  transform: scale(1.2) translateY(2%);
+  position: relative;
+  z-index: -10;
+`
 
 const HeroTeaser: React.FC = () => {
   const parallaxContainer = useRef(null)
@@ -55,7 +62,7 @@ const HeroTeaser: React.FC = () => {
         </HeroTeaserContent>
       </HeroTeaserSection>
 
-      <img src={wave} />
+      <Wave src={wave} />
     </>
     
   )
