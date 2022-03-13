@@ -19,6 +19,10 @@ export const StyledHeadline = styled.h2`
     background-color: ${themeVariables.darkOrange};
     margin: 15px auto;
   }
+
+  ${themeVariables.breakMobile} {
+    font-size: 2rem;
+  }
 `
 
 export const Headline: React.FC = (props) => {

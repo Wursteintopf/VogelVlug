@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { Global } from '@emotion/react'
 import Startseite from './react/screens/Start'
 import { globalStyles } from './styles/globalStyling'
-import Loader from './react/components/02_Compounds/Loader/Loader'
+import Loader from './react/components/02_Organisms/Loader/Loader'
 
 const App: React.FC = () => {
   return (
