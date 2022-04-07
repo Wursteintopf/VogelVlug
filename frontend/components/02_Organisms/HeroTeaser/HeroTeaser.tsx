@@ -70,7 +70,7 @@ const HeroTeaser: React.FC<HeroTeaserProps> = (props) => {
             <h1>{props.header}</h1>
             <p>{props.tagline}</p>
           </div>
-          <Image src={me} alt='' />
+          <Image src={me} alt='' width={500} height={500} />
         </HeroTeaserContent>
       </HeroTeaserSection>
 

@@ -94,8 +94,8 @@ const Projects: React.FC = () => {
       <ProjectCard id='ultrafood' color='#454545' href='https://www.instagram.com/p/Bm3hJWAFEw6/' img='/ultrafood.png'>
         <ProjectHeader>Instagram Kampagne UltraFood</ProjectHeader>
         <ProjectDescription>
-          Entwicklung und Gestaltung eines neuen Corporare Design und einer Brand Identity, sowie
-          Relaunch der Webseite des Sahakom e.V.
+          Produktion eines Instagram Imagevideos mit der deutschen Volleyball Nationalspielerin Mareen von Römer 
+          für Ultrafood von 8venture.
         </ProjectDescription>
         <ProjectTags>
           <ProjectTag>Imagevideo</ProjectTag>
