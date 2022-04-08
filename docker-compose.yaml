@@ -33,6 +33,7 @@ services:
       - ./frontend/components:/opt/components
       - ./frontend/public:/opt/public
       - ./frontend/styles:/opt/styles
+      - ./frontend/lib:/opt/lib
       - ./frontend/next.config.js:/opt/next.config.js
       - ./frontend/config.d.ts:/opt/config.d.ts
       - ./frontend/tsconfig.json:/opt/tsconfig.json

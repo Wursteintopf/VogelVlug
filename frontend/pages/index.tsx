@@ -1,6 +1,5 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
 import About from '../components/02_Organisms/About/About'
 import Customers from '../components/02_Organisms/Customers/Customers'
 import Footer from '../components/02_Organisms/Footer.tsx/Footer'
@@ -8,8 +7,16 @@ import HeroTeaser from '../components/02_Organisms/HeroTeaser/HeroTeaser'
 import Loader from '../components/02_Organisms/Loader/Loader'
 import Projects from '../components/02_Organisms/Projects/Projects'
 import WhatIDo from '../components/02_Organisms/WhatIDo/WhatIDo'
+import { fetchAPI } from '../lib/api'
 
-const Home: NextPage = () => {
+interface HomeProps {
+  heroteaser: {
+    title: string,
+    tagline: string,
+  }
+}
+
+const Home: NextPage<HomeProps> = (props) => {
   return (
     <>
       <Head>
@@ -21,8 +28,8 @@ const Home: NextPage = () => {
       <Loader />
 
       <HeroTeaser 
-        header='Hi, ich bin Markus'
-        tagline='fullstack, datavis, design, content creator, fotografie und mehr'
+        header={props.heroteaser.title}
+        tagline={props.heroteaser.tagline}
       />
 
       <About 
@@ -40,6 +47,17 @@ const Home: NextPage = () => {
       <Footer />
     </>
   )
+}
+
+export async function getStaticProps() {
+  const heroteaser = await fetchAPI('/heroteaser')  
+
+  return {
+    props: {
+      heroteaser: heroteaser.attributes,
+    },
+    revalidate: 60*60,
+  }
 }
 
 export default Home

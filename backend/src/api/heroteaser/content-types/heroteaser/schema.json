@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "heroteasers",
+  "info": {
+    "singularName": "heroteaser",
+    "pluralName": "heroteasers",
+    "displayName": "heroteaser"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "tagline": {
+      "type": "text"
+    }
+  }
+}
