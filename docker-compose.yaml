@@ -27,6 +27,7 @@ services:
     build:
       context: ./frontend
     image: vogelvlug/next:latest
+    restart: unless-stopped
     env_file: .env
     volumes:
       - ./frontend/pages:/opt/pages
