@@ -16,6 +16,13 @@ interface HomeProps {
   }
 }
 
+const fallback: HomeProps = {
+  heroteaser: {
+    title: '',
+    tagline: '',
+  }
+}
+
 const Home: NextPage<HomeProps> = (props) => {
   return (
     <>
@@ -50,13 +57,13 @@ const Home: NextPage<HomeProps> = (props) => {
 }
 
 export async function getStaticProps() {
-  const heroteaser = await fetchAPI('/heroteaser')  
+  const heroteaser = await fetchAPI('/heroteaser')
 
   return {
     props: {
-      heroteaser: heroteaser.attributes,
+      heroteaser: heroteaser.attributes || fallback,
     },
-    revalidate: 60*60,
+    revalidate: 30,
   }
 }
 

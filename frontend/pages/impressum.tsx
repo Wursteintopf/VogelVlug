@@ -9,6 +9,11 @@ interface ImpressumProps {
   text: string,
 }
 
+const fallback: ImpressumProps = {
+  title: '',
+  text: ''
+}
+
 const Impressum: NextPage<ImpressumProps> = (props) => {
   return (
     <>
@@ -27,8 +32,8 @@ export async function getStaticProps() {
   const impressum = await fetchAPI('/richtexts', { filters: { slug: 'impressum' } })
 
   return {
-    props: impressum[0].attributes,
-    revalidate: 60*60*24,
+    props: impressum[0]?.attributes || fallback,
+    revalidate: 30,
   }
 }
 

@@ -9,6 +9,11 @@ interface DatenschutzProps {
   text: string,
 }
 
+const fallback: DatenschutzProps = {
+  title: '',
+  text: ''
+}
+
 const Datenschutz: NextPage<DatenschutzProps> = (props) => {
   return (
     <>
@@ -27,8 +32,8 @@ export async function getStaticProps() {
   const datenschutz = await fetchAPI('/richtexts', { filters: { slug: 'datenschutz' } })
 
   return {
-    props: datenschutz[0].attributes,
-    revalidate: 60*60*24,
+    props: datenschutz[0]?.attributes || fallback,
+    revalidate: 30,
   }
 }
 

@@ -28,7 +28,11 @@ export async function fetchAPI(path: string, urlParamsObject = {}, options = {},
   const requestUrl = type === 'internal' ? getInternalStrapiURL(queryPath) : getExternalStrapiURL(queryPath);
 
   // Trigger API call
-  const response = await axios.get(requestUrl, mergedOptions);
-  const data = await response.data.data;
-  return data;
+  try {
+    const response = await axios.get(requestUrl, mergedOptions);
+    const data = await response.data.data;
+    return data;
+  } catch (e) {
+    return {}
+  }
 }
