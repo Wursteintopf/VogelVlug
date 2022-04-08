@@ -6,5 +6,5 @@ then
   next dev
 else
   echo 'Running Production Server:'
-  next build && next start
+  next start
 fi

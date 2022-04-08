@@ -9,5 +9,6 @@ ENV PATH /opt/node_modules/.bin:$PATH
 RUN yarn config set network-timeout 600000 -g
 RUN yarn install
 COPY ./ .
+RUN next build
 EXPOSE 3000
 CMD sh ./run.sh
