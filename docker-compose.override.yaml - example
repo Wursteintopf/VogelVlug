@@ -1,0 +1,9 @@
+version: "3"
+services:
+  strapi:
+    ports:
+      - "1337:1337"
+
+  next:
+    ports:
+      - "3000:3000"

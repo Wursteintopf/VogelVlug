@@ -1,0 +1,65 @@
+version: "3"
+services:
+  strapi:
+    container_name: vogelvlug_strapi_backend
+    build:
+      context: ./backend
+    image: vogelvlug/strapi:latest
+    restart: unless-stopped
+    env_file: .env
+    links:
+      - postgresDB:postgresDB
+    volumes:
+      - ./backend/config:/opt/app/config
+      - ./backend/src:/opt/app/src
+      - ./backend/package.json:/opt/package.json
+      - ./backend/yarn.lock:/opt/yarn.lock
+      - ./.env:/opt/app/.env
+    networks:
+      - strapi
+    depends_on:
+      - postgresDB
+
+  next:
+    container_name: vogelvlug_next_frontend
+    build:
+      context: ./frontend
+    image: vogelvlug/next:latest
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - ./frontend/pages:/opt/pages
+      - ./frontend/components:/opt/components
+      - ./frontend/public:/opt/public
+      - ./frontend/styles:/opt/styles
+      - ./frontend/config:/opt/config
+      - ./frontend/lib:/opt/lib
+      - ./frontend/next.config.js:/opt/next.config.js
+      - ./frontend/config.d.ts:/opt/config.d.ts
+      - ./frontend/tsconfig.json:/opt/tsconfig.json
+      - ./frontend/package.json:/opt/package.json
+      - ./frontend/yarn.lock:/opt/yarn.lock
+      - ./.env:/opt/.env
+    networks:
+      - strapi
+    depends_on:
+      - strapi
+
+  postgresDB:
+    image: postgres:latest
+    container_name: vogelvlug_postgresDB
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      POSTGRES_USER: ${DATABASE_USERNAME}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+      POSTGRES_DB: ${DATABASE_NAME}
+    volumes:
+      - ./backend/data:/var/lib/postgresql/data/
+    networks:
+      - strapi
+
+networks:
+  strapi:
+    name: Strapi
+    driver: bridge
