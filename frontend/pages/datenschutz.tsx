@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { fetchAPI } from '../lib/api'
+import { getAPI } from '../lib/api'
 import Footer from '../components/02_Organisms/Footer.tsx/Footer'
 import TextBox from '../components/02_Organisms/TextBox/TextBox'
 
@@ -29,7 +29,7 @@ const Datenschutz: NextPage<DatenschutzProps> = (props) => {
 }
 
 export async function getStaticProps() {
-  const datenschutz = await fetchAPI('/richtexts', { filters: { slug: 'datenschutz' } })
+  const datenschutz = await getAPI('/richtexts', { filters: { slug: 'datenschutz' } })
 
   return {
     props: datenschutz[0]?.attributes || fallback,

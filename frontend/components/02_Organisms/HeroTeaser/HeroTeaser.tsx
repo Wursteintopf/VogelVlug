@@ -13,16 +13,9 @@ import wave from '../../../public/wave1.svg'
 import styled from '@emotion/styled'
 import Image from 'next/image'
 
-export const Wave = styled(Image)`
-  min-width: 100vw !important;
-  min-height: 10vw !important;
-  z-index: -10;
-`
-
 export const WaveContainer = styled.div`
-  span {
-    overflow: visible !important;
-  }
+  width: 105vw;
+  z-index: -10;
 `
 
 interface HeroTeaserProps {
@@ -75,7 +68,7 @@ const HeroTeaser: React.FC<HeroTeaserProps> = (props) => {
       </HeroTeaserSection>
 
       <WaveContainer>
-        <Wave src={wave} />
+        <Image src={wave} alt='' layout='responsive' />
       </WaveContainer>
     </>
     

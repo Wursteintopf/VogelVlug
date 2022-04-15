@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { fetchAPI } from '../lib/api'
+import { getAPI } from '../lib/api'
 import Footer from '../components/02_Organisms/Footer.tsx/Footer'
 import TextBox from '../components/02_Organisms/TextBox/TextBox'
 
@@ -29,7 +29,7 @@ const Impressum: NextPage<ImpressumProps> = (props) => {
 }
 
 export async function getStaticProps() {
-  const impressum = await fetchAPI('/richtexts', { filters: { slug: 'impressum' } })
+  const impressum = await getAPI('/richtexts', { filters: { slug: 'impressum' } })
 
   return {
     props: impressum[0]?.attributes || fallback,
