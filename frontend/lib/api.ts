@@ -1,5 +1,6 @@
 import qs from 'qs'
 import axios from 'axios'
+import { STRAPI_API_URL } from '../config/config';
 
 function getInternalStrapiURL(path = "") {
   return `http://strapi:1337${path}`;
@@ -7,7 +8,7 @@ function getInternalStrapiURL(path = "") {
 
 function getExternalStrapiURL(path = "") {
   return `${
-    process.env.NEXT_PUBLIC_STRAPI_API_URL || "http://localhost:1337"
+    STRAPI_API_URL || "http://localhost:1337"
   }${path}`;
 }
 
